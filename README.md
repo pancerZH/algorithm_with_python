@@ -26,3 +26,9 @@
 ## quick_sort.py
 ### quick(arr)
 将列表中的元素升序排列
+
+## BFS.py  
+### person_is_seller(name)  
+判断名为name的人是否为芒果销售商（名字以m结尾）  
+### search(name, graph)  
+从graph中自名为name的人开始搜索芒果销售商
