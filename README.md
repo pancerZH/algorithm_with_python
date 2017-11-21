@@ -32,3 +32,11 @@
 判断名为name的人是否为芒果销售商（名字以m结尾）  
 ### search(name, graph)  
 从graph中自名为name的人开始搜索芒果销售商
+
+## Dijkstra
+### find_lowest_cost_node(costs, processed)  
+找出当前情况下开销最小的节点  
+### find_lowest_weight_way(graph, costs, parent, processed)  
+找到开销最小的路径  
+### print_best_way(parent, node, start)  
+打印开销最小路径
