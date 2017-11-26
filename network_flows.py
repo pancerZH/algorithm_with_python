@@ -55,7 +55,17 @@ def find_min_flow(graph, graph_flow, graph_res):
         stack.append(start)
 
 
-'''建立图、流图、残余图，依靠字典实现'''
+def get_max_flow(graph_flow):
+    sum = 0
+    for i in graph_flow[start]:
+        sum += graph_flow[start][i]
+    return sum
+
+'''
+建立图、流图、残余图，依靠字典实现
+当我完成绝大部分代码才发现，graph根本没有派上用场
+或许graph可以做为一个吉祥物，或者一个对照，或者用来取代graph_res
+'''
 def main():
     graph = {}
     graph['s'] = {}  # s是起点
@@ -108,6 +118,8 @@ def main():
 
     find_min_flow(graph, graph_flow, graph_res)
     print(graph_flow)
+    print(graph_res)
+    print('max flow : {}'.format(get_max_flow(graph_flow)))
 
 if __name__ == '__main__':
     main()
