@@ -2,7 +2,7 @@
 from collections import deque
 
 
-'''找到某一节点的祖先'''
+'''找到某一节点的祖先，若节点父亲为None，则代表节点本身是祖先，返回它自己而非None'''
 def find(parent, node):
     father = node
     while parent[father] is not None:
@@ -22,7 +22,7 @@ def make_me_ancestor(parent, node):
     parent[node] = None
 
 
-'''连接两个节点'''
+'''连接两个节点，使用前切记保证两节点连接后不会形成圈'''
 def union(father, son, graph, parent):
     make_me_ancestor(parent, son)  # 将son调整为其所在集合的祖先，便于连接
     parent[son] = father
