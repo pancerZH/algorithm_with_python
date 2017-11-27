@@ -44,3 +44,17 @@
 ## broadcast.py  
 ### find_best_solution(states_needed, stations)
 查找广播站的最小范围
+
+## network_flows.py
+### find_next(graph_res, stack)
+递归函数，通过不断迭代找出一条由起点到终点的路径，存放在stack中
+### cal_min_flow(graph_res, stack)
+计算储存在stack中的flow的最小值(在所有边中找)
+### update_graph(graph_flow, graph_res, stack)
+每次找到一组flow时，都要更新graph_flow和graph_res的连接情况  
+其中，graph_flow的连接情况不允许改变，如果遇到反向连接应减去相应的值；  
+graph_res允许出现反向连接，也即它的连接状态是可以改变的。当边的权值为0时，应删除这条边
+### find_min_flow(graph, graph_flow, graph_res)
+驱动函数，用于找到一组flow和更新图
+### get_max_flow(graph_flow)
+依据`一个点的流入量等于其流出量`的原理，计算起点的流出量作为总的流量
