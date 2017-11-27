@@ -14,9 +14,9 @@ def find_lowest_weight_way(graph, costs, parent, processed):
     while node is not None:
         cost = costs[node]
         neighbours = graph[node]
-        for i in neighbours.keys():
+        for i in neighbours:
             new_cost = cost + neighbours[i]
-            if new_cost < costs[i]:  # 更新节点
+            if new_cost < costs[i] and i not in processed:  # ????
                 costs[i] = new_cost
                 parent[i] = node
         processed.append(node)
